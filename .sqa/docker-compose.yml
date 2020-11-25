@@ -1,6 +1,8 @@
 services:
   maven-testing:
-    command: sleep 600000
+    command: sleep infinity
+    container_name: maven-testing
+    environment: []
     hostname: maven-testing
     image: maven:3-alpine
     volumes:
