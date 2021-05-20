@@ -1,14 +1,16 @@
 config:
-  credentials: []
-  project_repos:
-    checkstyle-samples:
-      branch: master
-      repo: https://github.com/EOSC-Synergy/checkstyle-samples
-environment: {}
+  credentials:
+  - id: docker_hub_cred
+    password_var: JPL_DOCKERPASS
+    username_var: JPL_DOCKERUSER
+  project_repos: {}
+environment:
+  JPL_DOCKERPUSH: node
 sqa_criteria:
-  qc_style:
+  qc_doc:
     repos:
-      checkstyle-samples:
+      this_repo:
         commands:
-        - mvn checkstyle:check
-        container: maven-testing
+        - npm install
+        container: node
+timeout: 600

@@ -1,10 +1,15 @@
 services:
-  maven-testing:
-    command: sleep 600000
-    hostname: maven-testing
-    image: maven:3-alpine
+  node:
+    build:
+      args: {}
+      context: ''
+      dockerfile: .
+    command: sleep 10000
+    hostname: sqaaas-web
+    image: node
     volumes:
-    - source: ./maven-project
-      target: /
+    - source: ./
+      target: /sqaaas-build
       type: bind
+    working_dir: /sqaaas-build
 version: '3.7'
