@@ -4,7 +4,7 @@ services:
       args: {}
       context: ''
       dockerfile: .
-    command: sleep infinity
+    command: sleep 10000
     hostname: sqaaas-web
     image: node
     volumes:
